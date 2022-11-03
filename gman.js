@@ -16,39 +16,35 @@ class GMan{
     // function to calculate no. of turns
     calculateTurns(direction, sourceX, sourceY, destinationX, destinationY){
 
-        let totalTurns = 2;     // maximum no. of turns required in the worst case scenario
-        let turnFlag;           // determines if the turn has to be made or not
+        // maximum no. of turns required in the worst case scenario
+        let totalTurns = 2;
+
+        // determines if the turn has to be made or not
+        let turnFlagX = (destinationX - sourceX)/Math.abs(destinationX - sourceX);      
+        let turnFlagY = (destinationY - sourceY)/Math.abs(destinationY - sourceY);  
 
         switch(direction){
             case 'N':
-                turnFlag = (destinationY - sourceY)/Math.abs(destinationY - sourceY);
-
                 if(sourceY <= destinationY) totalTurns--;
-                if(sourceX === destinationX && turnFlag > 0) totalTurns--;
-
+                if(sourceX === destinationX && turnFlagY > 0) totalTurns--;
+                
                 break;
 
             case 'E': 
-                turnFlag = (destinationX - sourceX)/Math.abs(destinationX - sourceX);
-
                 if(sourceX <= destinationX) totalTurns--;
-                if(sourceY === destinationY && turnFlag > 0) totalTurns--;   
+                if(sourceY === destinationY && turnFlagX > 0) totalTurns--;   
 
                 break;
                 
             case 'S': 
-                turnFlag = (destinationY - sourceY)/Math.abs(destinationY - sourceY);
-
                 if(sourceY >= destinationY) totalTurns--;
-                if(sourceX === destinationX && turnFlag < 0) totalTurns--;
+                if(sourceX === destinationX && turnFlagY < 0) totalTurns--;
                 
                 break;
             
             case 'W': 
-                turnFlag = (destinationX - sourceX)/Math.abs(destinationX - sourceX);
-
                 if(sourceX >= destinationX) totalTurns--;
-                if(sourceY === destinationY && turnFlag < 0)  totalTurns--;
+                if(sourceY === destinationY && turnFlagX < 0)  totalTurns--;
                 
                 break;
         }
