@@ -1,0 +1,17 @@
+{
+  "name": "power-of-g-man-codu-ai",
+  "version": "1.0.0",
+  "description": "Prints the remaining power of G-Man at the end of his journey.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node geektrust.js",
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "Prasenjit Singha Roy",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.1.0"
+  }
+}
